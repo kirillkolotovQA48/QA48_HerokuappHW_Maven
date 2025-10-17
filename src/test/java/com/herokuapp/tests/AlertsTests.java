@@ -1,6 +1,6 @@
 package com.herokuapp.tests;
 
-import com.herokuapp.pages.AlertsPage;
+import com.herokuapp.pages.JavaScriptAlertsPage;
 import com.herokuapp.pages.HomePage;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -14,25 +14,25 @@ public class AlertsTests extends TestBase{
 
     @Test
     public void clickForJsAlert() {
-        new AlertsPage(driver).comfirmAlert()
+        new JavaScriptAlertsPage(driver).comfirmAlert()
                 .verifyResaltAlert("You successfully clicked an alert");
 
     }
     @Test
     public void clickForJsConfirm(){
-        new AlertsPage(driver).confirmActionOnAlert("OK")
+        new JavaScriptAlertsPage(driver).confirmActionOnAlert("OK")
                 .verifyResaltAlert("Ok");
     }
 
     @Test
     public void clickForJsPromt(){
-        new AlertsPage(driver).sandPromtOnAlert("Check")
+        new JavaScriptAlertsPage(driver).sandPromtOnAlert("Check")
                 .verifyResaltAlert("Check");
     }
 
     @Test
     public void clickForJsPromptCancel(){
-        new AlertsPage(driver).sandPromtOnAlert(null)
+        new JavaScriptAlertsPage(driver).sandPromtOnAlert(null)
                 .verifyResaltAlert("null");
     }
 }

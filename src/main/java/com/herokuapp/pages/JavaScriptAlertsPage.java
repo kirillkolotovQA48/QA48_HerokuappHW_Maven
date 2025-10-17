@@ -6,14 +6,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
-public class AlertsPage extends BasePage{
-    public AlertsPage(WebDriver driver) {
+public class JavaScriptAlertsPage extends BasePage{
+    public JavaScriptAlertsPage(WebDriver driver) {
         super(driver);
     }
 
     @FindBy(css = "#content > div > ul > li:nth-of-type(1) > button")
     WebElement clickForJsAlert;
-    public AlertsPage comfirmAlert() {
+    public JavaScriptAlertsPage comfirmAlert() {
         click(clickForJsAlert);
         driver.switchTo().alert().accept();
         return this;
@@ -21,14 +21,14 @@ public class AlertsPage extends BasePage{
 
     @FindBy(id = "result")
     WebElement confirmResult;
-    public AlertsPage verifyResaltAlert(String text) {
+    public JavaScriptAlertsPage verifyResaltAlert(String text) {
         Assert.assertTrue(confirmResult.getText().contains(text));
         return this;
     }
 
     @FindBy(css = "#content ul li:nth-of-type(2) button")
     WebElement clickForJsComfirm;
-    public AlertsPage confirmActionOnAlert(String action) {
+    public JavaScriptAlertsPage confirmActionOnAlert(String action) {
         click(clickForJsComfirm);
 
         if(action !=null && action.equals("OK")){
@@ -43,7 +43,7 @@ public class AlertsPage extends BasePage{
 
     @FindBy(css = "#content ul li:nth-of-type(3) button")
     WebElement clickForJsPromt;
-    public AlertsPage sandPromtOnAlert(String message) {
+    public JavaScriptAlertsPage sandPromtOnAlert(String message) {
         click(clickForJsPromt);
 
         Alert promt = driver.switchTo().alert();

@@ -11,8 +11,16 @@ public class HomePage extends BasePage{
 
     @FindBy(css = "#content > ul > li:nth-of-type(29) > a")
     WebElement javaScriptAlerts;
-    public AlertsPage javaScriptAlertsLink() {
+    public JavaScriptAlertsPage javaScriptAlertsLink() {
         click(javaScriptAlerts);
-        return new AlertsPage(driver);
+        return new JavaScriptAlertsPage(driver);
     }
+
+    @FindBy(css = "#content ul li:nth-of-type(34) a")
+    WebElement framesPage;
+    public NestedFramesPage nestedFramesPageLink(){
+        click(framesPage);
+        return new NestedFramesPage(driver);
+    }
+
 }

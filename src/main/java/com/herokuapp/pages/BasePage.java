@@ -39,4 +39,8 @@ public class BasePage {
         js.executeScript("window.scrollBy("+x+ ","+y+")");
         click(element);
     }
+    public void pause(){
+        new WebDriverWait(driver, Duration.ofSeconds(5))
+                .until(ExpectedConditions.numberOfWindowsToBe(2));
+    }
 }

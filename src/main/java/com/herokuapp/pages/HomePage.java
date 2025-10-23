@@ -23,4 +23,17 @@ public class HomePage extends BasePage{
         return new NestedFramesPage(driver);
     }
 
+    @FindBy(css = "#content > ul > li:nth-child(33) > a")
+    WebElement multipleWindows;
+    public MultipleWindowsPage multipleWindowsLink() {
+        click(multipleWindows);
+        return new MultipleWindowsPage(driver);
+    }
+
+    @FindBy(css = "#content > ul > li:nth-child(11) > a")
+    WebElement drop;
+    public DropDownPage dropDownLink() {
+        click(drop);
+        return new DropDownPage(driver);
+    }
 }
